@@ -2,7 +2,7 @@
 
 {% block body %}
 
-    <h1>Welcome, user</h1>
+    <h1>Hello, {{ user.first_name }}</h1>
 
     <div><a href="{% url 'accounts:logout' %}">Logout</a></div>
 
