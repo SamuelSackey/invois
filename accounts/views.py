@@ -54,4 +54,7 @@ def register_view(request):
 
 
 def logout_view(request):
-    return render(request, "accounts/home.html")
+    logout(request)
+    return render(request, "accounts/login.html", {
+        "message": "Logged out"
+    })

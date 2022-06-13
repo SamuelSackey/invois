@@ -4,6 +4,10 @@
 
     <h1>Login to your Account</h1>
 
+    {% if message %}
+        <div>{{ message }}</div>
+    {% endif %}
+
     <form action="{% url 'accounts:login' %}" method="post">
         {% csrf_token %}
 
