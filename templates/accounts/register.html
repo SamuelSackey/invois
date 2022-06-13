@@ -4,6 +4,8 @@
 
     <h1>Create an Account</h1>
 
+    <div>{{ message }}</div>
+
     <form action="{% url 'accounts:register' %}" method="post">
         {% csrf_token %}
 
