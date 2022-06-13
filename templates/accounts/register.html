@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <h1>Create an Account</h1>
+
+    <form action="{% url 'accounts:register' %}" method="post">
+        {% csrf_token %}
+
+        <div>First Name: <input type="text" name="first_name"></div>
+        <div>Last Name: <input type="text" name="last_name"></div>
+        <div>Username: <input type="text" name="username"></div>
+        <div>Email: <input type="email" name="email"></div>
+        <div>Password: <input type="password" name="password1"></div>
+        <div>Confirm Password: <input type="password" name="password2"></div>
+
+        <div><input type="submit" value="Register"></div>
+        
+    </form>
+
+    <div> Already have an Account? <a href="{% url 'accounts:login' %}">Login</a> </div>
+
+{% endblock %}
