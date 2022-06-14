@@ -10,6 +10,7 @@
     <link href="{% static 'invoice/styles.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'header.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'form.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'table.css' %}" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -22,9 +23,8 @@
         <div>
             <h3>Hello, {{ user.first_name }}</h3>
 
-            <button>
-                <a href="{% url 'accounts:logout' %}">Logout</a>
-            </button>
+            <a href="{% url 'accounts:logout' %}" class="head-btn">Logout</a>
+            
         </div>
         
     </div>

@@ -14,15 +14,6 @@
     margin: 5px 0px;
 }
 
-.header button {
-    padding: 10px 20px;
-    font-size: 18px;
-    font-weight: bold;
-    background-color: #FFFFFF;
-    border: none;
-    border-radius: 5px;
-}
-
 .header div {
     display: flex;
     align-items: center;
@@ -32,12 +23,26 @@
     text-decoration: none;
 }
 
-.header button > a {
-    text-decoration: none;
-    color: #4A65EE;
-}
-
 h3 {
     margin: 0 30px;
     color: #FFFFFF;
+}
+
+.head-btn {
+    text-decoration: none;
+    color: #4A65EE;
+    padding: 7px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+}
+
+.head-btn:hover {
+    background-color: #4A65EE;
+    color: #FFFFFF;
+    outline-color: #FFFFFF;
+    outline-style: solid;
+    outline-width: 3px;
 }

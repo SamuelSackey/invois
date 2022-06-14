@@ -9,9 +9,8 @@
         <div>
             <h3>Hello, {{ user.first_name }}</h3>
 
-            <button>
-                <a href="{% url 'accounts:logout' %}">Logout</a>
-            </button>
+            <a href="{% url 'accounts:logout' %}" class="head-btn">Logout</a>
+
         </div>
         
     </div>
@@ -47,9 +46,8 @@
             {% endif %}
         </div>
 
-        <button>
-            <a href="{% url 'invoice:index' %}">Create Invoice</a>
-        </button>
+        <a href="{% url 'invoice:index' %}" class="big-btn">Create Invoice</a>
+
     </div>
 
 {% endblock %}x

@@ -85,3 +85,11 @@ input[type=submit] {
     border: none;
     border-radius: 5px;
 }
+
+input[type=submit]:hover {
+    background-color: #FFFFFF;
+    color: #4A65EE;
+    outline-color: #4A65EE;
+    outline-style: solid;
+    outline-width: 5px;
+}

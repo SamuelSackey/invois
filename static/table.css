@@ -43,3 +43,40 @@
 .table-container td > a:hover {
     color: #4A65EE;
 }
+
+/* edit invoice table */
+.table-container .name {
+    width: 50%;
+}
+
+.table-container .invoice th {
+    text-align: center;
+    color: #4A65EE;
+    padding-bottom: 10px;
+    border: none;
+}
+
+.table-container .invoice td {
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.table-container .invoice .name, .table-container .invoice .td_name {
+    text-align: left;
+}
+
+.table-container .td_del > a{
+    background-color: #4A65EE;
+    color: #FFFFFF;
+    padding: 2px 5px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.table-container .td_del > a:hover{
+    background-color: #FFFFFF;
+    color: #4A65EE;
+    outline-color: #4A65EE;
+    outline-style: solid;
+    outline-width: 2px;
+}

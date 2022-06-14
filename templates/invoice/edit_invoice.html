@@ -7,7 +7,7 @@
 
         <div class="table-container">
             {% if items %}
-                <table>
+                <table class="invoice">
                     <thead>
                         <th class="name">Item Name</th>
                         <th class="qty">Qty</th>
@@ -22,6 +22,9 @@
                                 <td class="td_gty">{{ item.quantity }}</td>
                                 <td class="td_price">{{ item.price }}</td>
                                 <td class="td_amount">{{ item.total_cost }}</td>
+                                <td class="td_del">
+                                    <a href="{% url 'invoice:edit_invoice' invoice.id %}">Delete</a>
+                                </td>
                             </tr>
                         {% endfor %}
                     </tbody>
@@ -33,9 +36,8 @@
             {% endif %}
         </div>
 
-        <button>
-            <a href="{% url 'invoice:index' %}">Add Item</a>
-        </button>
+        <a href="{% url 'invoice:edit_invoice' invoice.id %}" class="big-btn">Add Item</a>
+        
     </div>
 
 {% endblock %}x
