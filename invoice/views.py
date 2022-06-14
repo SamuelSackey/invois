@@ -54,8 +54,10 @@ def edit_invoice(request, invoice_id):
     invoice = Invoice.objects.get(pk=invoice_id)
 
     if invoice.user == request.user:
+        items = Item.objects.filter(invoice=invoice)
         return render(request, "invoice/edit_invoice.html", {
-            "invoice": invoice
+            "invoice": invoice,
+            "items": items
         })
 
     return redirect(reverse("accounts:index"))

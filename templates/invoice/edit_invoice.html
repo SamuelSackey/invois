@@ -2,6 +2,40 @@
 
 {% block body %}
 
-    <h2>{{ invoice.title }} </h2>
+    <div class="inv-display">
+        <h2>{{ invoice.title }}</h2>
+
+        <div class="table-container">
+            {% if items %}
+                <table>
+                    <thead>
+                        <th class="name">Item Name</th>
+                        <th class="qty">Qty</th>
+                        <th class="price">Price</th>
+                        <th class="amount">Amount</th>
+                    </thead>
+
+                    <tbody>
+                        {% for item in items %}
+                            <tr>
+                                <td class="td_name">{{ item.name }}</td>
+                                <td class="td_gty">{{ item.quantity }}</td>
+                                <td class="td_price">{{ item.price }}</td>
+                                <td class="td_amount">{{ item.total_cost }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>
+                    No Items in Invoice
+                </p>
+            {% endif %}
+        </div>
+
+        <button>
+            <a href="{% url 'invoice:index' %}">Add Item</a>
+        </button>
+    </div>
 
 {% endblock %}x
