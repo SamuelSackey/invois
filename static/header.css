@@ -30,6 +30,10 @@
 
 .header a {
     text-decoration: none;
+}
+
+.header button > a {
+    text-decoration: none;
     color: #4A65EE;
 }
 

@@ -41,7 +41,7 @@ def create_invoice(request):
                           tax=tax, user=request.user)
         invoice.save()
 
-        return redirect(reverse("invoice:invoice", args=(invoice.id,)))
+        return redirect(reverse("invoice:edit_invoice", args=(invoice.id,)))
 
     has_business = Business.objects.filter(user=request.user)
     if not has_business:
@@ -50,7 +50,7 @@ def create_invoice(request):
     return render(request, "invoice/create_invoice.html")
 
 
-def invoice(request, invoice_id):
-    return render(request, "invoice/invoice.html", {
-        "invoice_id": invoice_id
+def edit_invoice(request, invoice_id):
+    return render(request, "invoice/edit_invoice.html", {
+        "invoice": Invoice.objects.get(pk=invoice_id)
     })
