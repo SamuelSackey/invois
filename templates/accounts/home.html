@@ -19,19 +19,23 @@
     <div class="inv-display">
         <h2>Invoices</h2>
 
-        <div class="inv-container">
+        <div class="table-container">
             {% if invoices %}
                 <table>
                     <thead>
-                        <th>Title</th>
-                        <th>Date Issued</th>
+                        <th class="ID">ID</th>
+                        <th class="left">Title</th>
+                        <th class="right">Date Issued</th>
                     </thead>
 
                     <tbody>
                         {% for invoice in invoices %}
                             <tr>
-                                <td>{{ invoice.title }}</td>
-                                <td>{{ invoice.issue_date }}</td>
+                                <td class="td_ID">{{ invoice.id }}</td>
+                                <td class="td_left">
+                                    <a href="{% url 'invoice:index' %}">{{ invoice.title }}</a>
+                                </td>
+                                <td class="td_right">{{ invoice.issue_date }}</td>
                             </tr>
                         {% endfor %}
                     </tbody>
