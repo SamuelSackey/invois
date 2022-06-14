@@ -44,5 +44,8 @@ class Item(models.Model):
         related_name="items"
     )
 
+    def total_cost(self):
+        return self.quantity * self.price
+
     def __str__(self):
         return f"{self.name} | qty: {self.quantity} | ${self.price} "
