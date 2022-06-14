@@ -67,6 +67,17 @@ def add_item(request, invoice_id):
     invoice = Invoice.objects.get(pk=invoice_id)
 
     if invoice.user == request.user:
+        if request.method == "POST":
+            name = request.POST["name"]
+            quantity = request.POST["quantity"]
+            price = request.POST["price"]
+
+            item = Item(name=name, quantity=quantity,
+                        price=price, invoice=invoice)
+            item.save()
+
+            return redirect(reverse("invoice:edit_invoice", args=(invoice.id,)))
+
         return render(request, "invoice/add_invoice.html", {
             "invoice": invoice
         })
