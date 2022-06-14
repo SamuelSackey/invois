@@ -31,6 +31,10 @@
     border: none;
 }
 
+.table-container td {
+    padding-bottom: 5px;
+}
+
 .table-container td > a {
     text-decoration: none;
     color: #000;
