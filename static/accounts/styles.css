@@ -98,3 +98,34 @@ input[type=submit] {
     text-decoration: none;
     color: #4A65EE;
 }
+
+/* Homepage section */
+.inv-display {
+    margin: 5px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inv-display h2 {
+    margin: 20px 0;
+    text-transform: uppercase;
+}
+
+.inv-display p {
+    margin: 20px 0 40px;
+}
+
+.inv-display button {
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #4A65EE;
+    border: none;
+    border-radius: 5px;
+}
+
+.inv-display a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
