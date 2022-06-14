@@ -4,6 +4,8 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, logout, login
 
+from invoice.models import Invoice
+
 # Create your views here.
 
 
@@ -11,7 +13,15 @@ def index(request):
     if not request.user.is_authenticated:
         return redirect(reverse("accounts:login"))
 
-    return render(request, "accounts/home.html")
+    return redirect("accounts:home")
+
+
+def home(request):
+    invoices = Invoice.objects.filter(user=request.user)
+
+    return render(request, "accounts/home.html", {
+        "invoices": invoices
+    })
 
 
 def login_view(request):

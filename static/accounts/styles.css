@@ -28,7 +28,7 @@ body {
     text-transform: uppercase;
 }
 
-.inv-display p {
+.inv-container {
     margin: 20px 0 40px;
 }
 

@@ -19,7 +19,29 @@
     <div class="inv-display">
         <h2>Invoices</h2>
 
-        <p>No Invoices available</p>
+        <div class="inv-container">
+            {% if invoices %}
+                <table>
+                    <thead>
+                        <th>Title</th>
+                        <th>Date Issued</th>
+                    </thead>
+
+                    <tbody>
+                        {% for invoice in invoices %}
+                            <tr>
+                                <td>{{ invoice.title }}</td>
+                                <td>{{ invoice.issue_date }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>
+                    No Invoices available
+                </p>
+            {% endif %}
+        </div>
 
         <button>
             <a href="{% url 'invoice:index' %}">Create Invoice</a>
