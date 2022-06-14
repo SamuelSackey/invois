@@ -9,8 +9,24 @@
     <title>Invois</title>
     <link href="{% static 'invoice/styles.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'header.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'form.css' %}" rel="stylesheet" type="text/css">
 </head>
 <body>
+
+    <div class="header">
+
+        <h1>INVOIS</h1>
+
+        <div>
+            <h3>Hello, {{ user.first_name }}</h3>
+
+            <button>
+                <a href="{% url 'accounts:logout' %}">Logout</a>
+            </button>
+        </div>
+        
+    </div>
+
     {% block body %}
     {% endblock %}
 </body>
