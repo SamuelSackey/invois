@@ -1,0 +1,26 @@
+{% extends "invoice/layout.html" %}
+
+{% block body %}
+
+<div class="form-container">
+
+    <h1>Add a Business</h1>
+
+    {% if message %}
+        <div class="message">{{ message }}</div>
+    {% endif %}
+
+    <form action="{% url 'invoice:create_invoice' %}" method="post">
+        {% csrf_token %}
+
+        <div><label>Invoice Title:</label> <input type="text" name="title" required></div>
+        <div><label>Issue Date:</label> <input type="date" name="issue_date" required></div>
+        <div><label>Tax (%):</label> <input type="number" name="tax" min="0" max="100" required ></div>
+
+        <div><input type="submit" value="Create"></div>
+        
+    </form>
+
+</div>
+
+{% endblock %}x

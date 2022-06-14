@@ -49,6 +49,8 @@ label {
 
 
 input[type=text],
+input[type=date],
+input[type=number],
 input[type=email],
 input[type=password] {
     background-color: #F0F5F9;
@@ -64,11 +66,18 @@ input[type=password] {
 }
 
 input[type=text]:focus,
+input[type=date]:focus,
+input[type=number]:focus,
 input[type=email]:focus,
 input[type=password]:focus {
     border: 1px solid #4A65EE;
     outline: none;
 }
+
+/* .date {
+    width: 100%;
+    margin: 20px;
+} */
 
 input[type=submit] {
     width: 50%;
