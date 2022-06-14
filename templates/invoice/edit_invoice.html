@@ -27,6 +27,18 @@
                                 </td>
                             </tr>
                         {% endfor %}
+                        <tr><td></td></tr>
+
+                        <tr>
+                            <td class="td_name tax">Tax</td>
+                            <td></td><td></td>
+                            <td class="tax">{{ invoice.tax }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="td_name total">Total</td>
+                            <td></td><td></td>
+                            <td class="total">${{ total }}</td>
+                        </tr>
                     </tbody>
                 </table>
             {% else %}

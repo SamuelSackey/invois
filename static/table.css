@@ -80,3 +80,13 @@
     outline-style: solid;
     outline-width: 2px;
 }
+
+.tax {
+    font-weight: 700;
+    padding-top: 20px;
+}
+
+.total {
+    color: #4A65EE;
+    font-size: 20px;
+}

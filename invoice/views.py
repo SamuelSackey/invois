@@ -55,9 +55,17 @@ def edit_invoice(request, invoice_id):
 
     if invoice.user == request.user:
         items = Item.objects.filter(invoice=invoice)
+
+        # Total
+        subtotal = 0
+        for item in items:
+            subtotal += item.total_cost()
+
+        total = subtotal * (1 + invoice.tax/100)
         return render(request, "invoice/edit_invoice.html", {
             "invoice": invoice,
-            "items": items
+            "items": items,
+            "total": total
         })
 
     return redirect(reverse("accounts:index"))
