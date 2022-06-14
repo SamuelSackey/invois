@@ -4,6 +4,10 @@
 
     <h1>Hello, {{ user.first_name }}</h1>
 
-    <div><a href="{% url 'accounts:logout' %}">Logout</a></div>
+    <div>
+        <button>
+            <a href="{% url 'accounts:logout' %}">Logout</a>
+        </button>
+    </div>
 
 {% endblock %}

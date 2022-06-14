@@ -2,22 +2,26 @@
 
 {% block body %}
 
-    <h1>Login to your Account</h1>
+    <div class="form-container">
 
-    {% if message %}
-        <div>{{ message }}</div>
-    {% endif %}
+        <h1>Login to your Account</h1>
 
-    <form action="{% url 'accounts:login' %}" method="post">
-        {% csrf_token %}
+        {% if message %}
+            <div class="message">{{ message }}</div>
+        {% endif %}
 
-        <div>Username: <input type="text" name="username"></div>
-        <div>Password: <input type="password" name="password"></div>
+        <form action="{% url 'accounts:login' %}" method="post">
+            {% csrf_token %}
 
-        <div><input type="submit" value="Login"></div>
-        
-    </form>
+            <div><label for="username">Username:</label> <input type="text" name="username" required></div>
+            <div><label for="password">Password:</label> <input type="password" name="password" required></div>
 
-    <div> Don't have an Account? <a href="{% url 'accounts:register' %}">Register</a> </div>
+            <div><input type="submit" value="Login"></div>
+            
+        </form>
+
+        <div class="alt-link"> Don't have an Account? <a href="{% url 'accounts:register' %}">Register</a> </div>
+
+    </div>
 
 {% endblock %}

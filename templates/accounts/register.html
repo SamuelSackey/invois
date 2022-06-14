@@ -2,26 +2,30 @@
 
 {% block body %}
 
-    <h1>Create an Account</h1>
+    <div class="form-container">
 
-    {% if message %}
-        <div>{{ message }}</div>
-    {% endif %}
+        <h1>Create an Account</h1>
 
-    <form action="{% url 'accounts:register' %}" method="post">
-        {% csrf_token %}
+        {% if message %}
+            <div class="message">{{ message }}</div>
+        {% endif %}
 
-        <div>First Name: <input type="text" name="first_name"></div>
-        <div>Last Name: <input type="text" name="last_name"></div>
-        <div>Username: <input type="text" name="username"></div>
-        <div>Email: <input type="email" name="email"></div>
-        <div>Password: <input type="password" name="password1"></div>
-        <div>Confirm Password: <input type="password" name="password2"></div>
+        <form action="{% url 'accounts:register' %}" method="post">
+            {% csrf_token %}
 
-        <div><input type="submit" value="Register"></div>
-        
-    </form>
+            <div><label>First Name:</label> <input type="text" name="first_name" required></div>
+            <div><label>Last Name:</label> <input type="text" name="last_name" required></div>
+            <div><label>Username:</label> <input type="text" name="username" required></div>
+            <div><label>Email:</label> <input type="email" name="email" required></div>
+            <div><label>Password:</label> <input type="password" name="password1" required></div>
+            <div><label>Confirm Password:</label> <input type="password" name="password2" required></div>
 
-    <div> Already have an Account? <a href="{% url 'accounts:login' %}">Login</a> </div>
+            <div><input type="submit" value="Register"></div>
+            
+        </form>
+
+        <div class="alt-link"> Already have an Account? <a href="{% url 'accounts:login' %}">Login</a> </div>
+
+    </div>
 
 {% endblock %}
