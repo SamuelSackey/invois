@@ -33,7 +33,7 @@
                             <tr>
                                 <td class="td_ID">{{ invoice.id }}</td>
                                 <td class="td_left">
-                                    <a href="{% url 'invoice:index' %}">{{ invoice.title }}</a>
+                                    <a href="{% url 'invoice:edit_invoice' invoice.id %}">{{ invoice.title }}</a>
                                 </td>
                                 <td class="td_right">{{ invoice.issue_date }}</td>
                             </tr>

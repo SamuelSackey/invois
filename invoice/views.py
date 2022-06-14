@@ -51,6 +51,11 @@ def create_invoice(request):
 
 
 def edit_invoice(request, invoice_id):
-    return render(request, "invoice/edit_invoice.html", {
-        "invoice": Invoice.objects.get(pk=invoice_id)
-    })
+    invoice = Invoice.objects.get(pk=invoice_id)
+
+    if invoice.user == request.user:
+        return render(request, "invoice/edit_invoice.html", {
+            "invoice": invoice
+        })
+
+    return redirect(reverse("accounts:index"))
