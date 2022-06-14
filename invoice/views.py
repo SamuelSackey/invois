@@ -61,3 +61,14 @@ def edit_invoice(request, invoice_id):
         })
 
     return redirect(reverse("accounts:index"))
+
+
+def add_item(request, invoice_id):
+    invoice = Invoice.objects.get(pk=invoice_id)
+
+    if invoice.user == request.user:
+        return render(request, "invoice/add_invoice.html", {
+            "invoice": invoice
+        })
+
+    return redirect(reverse("accounts:index"))

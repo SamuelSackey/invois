@@ -1,0 +1,26 @@
+{% extends "invoice/layout.html" %}
+
+{% block body %}
+
+<div class="form-container">
+
+    <h1>Item Information</h1>
+
+    {% if message %}
+        <div class="message">{{ message }}</div>
+    {% endif %}
+
+    <form action="{% url 'invoice:add_item' invoice.id %}" method="post">
+        {% csrf_token %}
+
+        <div><label>Item Name:</label> <input type="text" name="title" required></div>
+        <div><label>Quantity:</label> <input type="number" name="quantity" required></div>
+        <div><label>Price ($):</label> <input type="number" name="price" required ></div>
+
+        <div><input type="submit" value="Add Item"></div>
+        
+    </form>
+
+</div>
+
+{% endblock %}x
