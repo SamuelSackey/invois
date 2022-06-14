@@ -83,3 +83,15 @@ def add_item(request, invoice_id):
         })
 
     return redirect(reverse("accounts:index"))
+
+
+def delete_item(request, invoice_id, item_id):
+    invoice = Invoice.objects.get(pk=invoice_id)
+
+    if invoice.user == request.user:
+        item = Item.objects.get(pk=item_id)
+        item.delete()
+
+        return redirect(reverse("invoice:edit_invoice", args=(invoice.id,)))
+
+    return redirect(reverse("accounts:index"))

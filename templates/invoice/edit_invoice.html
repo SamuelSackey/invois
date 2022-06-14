@@ -21,9 +21,9 @@
                                 <td class="td_name">{{ item.name }}</td>
                                 <td class="td_gty">{{ item.quantity }}</td>
                                 <td class="td_price">{{ item.price }}</td>
-                                <td class="td_amount">{{ item.total_cost }}</td>
+                                <td class="td_amount">${{ item.total_cost }}</td>
                                 <td class="td_del">
-                                    <a href="{% url 'invoice:edit_invoice' invoice.id %}">Delete</a>
+                                    <a href="{% url 'invoice:delete_item' invoice.id item.id %}">Delete</a>
                                 </td>
                             </tr>
                         {% endfor %}
