@@ -24,6 +24,13 @@ def home(request):
     })
 
 
+def user(request):
+    business = request.user.businesses.all().first()
+    return render(request, "accounts/user.html", {
+        "business": business
+    })
+
+
 def login_view(request):
 
     if request.method == "POST":

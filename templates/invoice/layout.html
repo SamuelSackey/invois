@@ -21,7 +21,9 @@
         </a>
 
         <div>
-            <h3>Hello, {{ user.first_name }}</h3>
+            <a href="{% url 'accounts:user' %}">
+                <h3>Hello, {{ user.first_name }}</h3>
+            </a>
 
             <a href="{% url 'accounts:logout' %}" class="head-btn">Logout</a>
             

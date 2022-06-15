@@ -1,0 +1,70 @@
+{% extends "accounts/layout.html" %}
+
+{% block body %}
+
+    <div class="header">
+
+        <a href="{% url 'accounts:index' %}">
+            <h1>INVOIS</h1>
+        </a>
+
+        <div>
+            <h3>Hello, {{ user.first_name }}</h3>
+
+            <a href="{% url 'accounts:logout' %}" class="head-btn">Logout</a>
+
+        </div>
+        
+    </div>
+
+    <div class="inv-display">
+        <h2>{{ user.first_name }} {{ user.last_name  }}</h2>
+
+        <div class="info-container">
+                <h5>User Information</h5>
+                <hr>
+                <table>
+                    <tbody>
+                            <tr>
+                                <td class="label">Username:</td>
+                                <td>{{ user.username }} </td>
+                            </tr>
+
+                            <tr>
+                                <td class="label">Email:</td>
+                                <td>{{ user.email }} </td>
+                            </tr>
+
+                    </tbody>
+                </table>
+
+                <!-- business -->
+                <h5>Business Information</h5>
+                <hr>
+                <table>
+                    <tbody>
+                            <tr>
+                                <td class="label">Business Name:</td>
+                                <td>{{ business.name }} </td>
+                            </tr>
+
+                            <tr>
+                                <td class="label">Contact:</td>
+                                <td>{{ business.contact }} </td>
+                            </tr>
+
+                            <tr>
+                                <td class="label">Address:</td>
+                                <td>{{ business.address }} ({{ business.city }} - {{ business.country }}) </td>
+                            </tr>
+
+                    </tbody>
+                </table>
+            
+        </div>
+
+        <a href="{% url 'accounts:index' %}" class="big-btn">Done</a>
+
+    </div>
+
+{% endblock %}x

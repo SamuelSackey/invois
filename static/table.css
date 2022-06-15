@@ -90,3 +90,33 @@
     color: #4A65EE;
     font-size: 20px;
 }
+
+/* user info */
+.info-container {
+    width: 450px;
+    margin: 10px auto 50px;
+    padding: 30px 20px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.info-container h5 {
+    font-size: 20px;
+    margin: 10px 0;
+    font-weight: 400;
+    color: #4A65EE;
+}
+
+.info-container table {
+    width: 100%;
+}
+
+.info-container td {
+    padding-bottom: 15px;
+}
+
+.info-container .label {
+    width: 50%;
+}
