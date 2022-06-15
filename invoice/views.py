@@ -1,10 +1,12 @@
 from django.urls import reverse
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from .models import *
 
 # Create your views here.
 
 
+@login_required
 def index(request):
 
     has_business = Business.objects.filter(user=request.user)
@@ -14,6 +16,7 @@ def index(request):
     return redirect(reverse("invoice:create_invoice"))
 
 
+@login_required
 def add_business(request):
     if request.method == "POST":
         name = request.POST["name"]
@@ -31,6 +34,7 @@ def add_business(request):
     return render(request, "invoice/add_business.html")
 
 
+@login_required
 def create_invoice(request):
     if request.method == "POST":
         title = request.POST["title"]
@@ -50,6 +54,7 @@ def create_invoice(request):
     return render(request, "invoice/create_invoice.html")
 
 
+@login_required
 def edit_invoice(request, invoice_id):
     invoice = Invoice.objects.get(pk=invoice_id)
 
@@ -71,6 +76,7 @@ def edit_invoice(request, invoice_id):
     return redirect(reverse("accounts:index"))
 
 
+@login_required
 def add_item(request, invoice_id):
     invoice = Invoice.objects.get(pk=invoice_id)
 
@@ -93,6 +99,7 @@ def add_item(request, invoice_id):
     return redirect(reverse("accounts:index"))
 
 
+@login_required
 def delete_item(request, invoice_id, item_id):
     invoice = Invoice.objects.get(pk=invoice_id)
 

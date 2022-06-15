@@ -3,6 +3,7 @@ from django.urls import reverse
 
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, logout, login
+from django.contrib.auth.decorators import login_required
 
 from invoice.models import Invoice
 
@@ -16,6 +17,7 @@ def index(request):
     return redirect("accounts:home")
 
 
+@login_required
 def home(request):
     invoices = Invoice.objects.filter(user=request.user)
 
@@ -24,6 +26,7 @@ def home(request):
     })
 
 
+@login_required
 def user(request):
     business = request.user.businesses.all().first()
     return render(request, "accounts/user.html", {
@@ -86,6 +89,7 @@ def register_view(request):
     return render(request, "accounts/register.html")
 
 
+@login_required
 def logout_view(request):
     logout(request)
     return render(request, "accounts/login.html", {
